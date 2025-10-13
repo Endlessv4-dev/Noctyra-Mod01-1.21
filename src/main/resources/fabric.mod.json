@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "noctyra",
+	"version": "${version}",
+	"name": "Noctyra",
+	"description": "Noctyra mod for the server NOCTYRA.",
+	"authors": [
+		"Endless v4"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/Endlessv4-dev/Noctyra-Mod01.1.21"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/noctyra/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.endless.v4.Noctyra"
+		],
+		"client": [
+			"dev.endless.v4.NoctyraClient"
+		],
+		"fabric-datagen": [
+			"dev.endless.v4.NoctyraDataGenerator"
+		]
+	},
+	"mixins": [
+		"noctyra.mixins.json",
+		{
+			"config": "noctyra.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
