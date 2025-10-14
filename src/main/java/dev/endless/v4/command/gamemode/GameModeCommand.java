@@ -3,10 +3,16 @@ package dev.endless.v4.command.gamemode;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
+import com.mojang.brigadier.suggestion.Suggestion;
+import com.mojang.brigadier.suggestion.Suggestions;
+import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+import com.mojang.brigadier.tree.CommandNode;
+import com.mojang.brigadier.tree.LiteralCommandNode;
 import dev.endless.v4.Noctyra;
 import dev.endless.v4.command.util.NoctyraTextUtil;
 import dev.endless.v4.init.CommandInit;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.minecraft.block.DirtPathBlock;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -14,6 +20,11 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.world.GameMode;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 public class GameModeCommand {
     public static void register() {
@@ -25,13 +36,11 @@ public class GameModeCommand {
         });
     }
     private static void registerCommand(CommandDispatcher<ServerCommandSource> dispatcher) {
-        dispatcher.register(CommandManager.literal("gamemode")
-                .requires(source -> source.hasPermissionLevel(2)) // requires OP
-                .then(CommandManager.argument("mode", StringArgumentType.word())
-                        .executes(ctx -> changeGameMode(ctx, null))
-                        .then(CommandManager.argument("player", StringArgumentType.word())
-                                .executes(ctx -> changeGameMode(ctx, StringArgumentType.getString(ctx, "player")))))
-        );
+        // Remove vanilla gamemode command if it exists
+        dispatcher.getRoot().getChildren().removeIf(node -> node.getName().equals("gamemode"));
+
+        dispatcher.getRoot().addChild(buildGamemodeNode("gamemode"));
+        dispatcher.getRoot().addChild(buildGamemodeNode("gm"));
     }
     private static int changeGameMode(CommandContext<ServerCommandSource> context, String targetName) {
         ServerCommandSource source = context.getSource();
@@ -96,5 +105,51 @@ public class GameModeCommand {
         }
         Noctyra.LOGGER.info(sender.getName().getString() + " changed the gamemode for " + target.getName().getString() + " to " + modeName);
         return 1;
+    }
+
+    private static LiteralCommandNode<ServerCommandSource> buildGamemodeNode(String name) {
+        return CommandManager.literal(name)
+                .requires(source -> source.hasPermissionLevel(2))
+                .executes(ctx -> {
+                    var sender = ctx.getSource().getPlayer();
+                    sender.sendMessage(
+                            NoctyraTextUtil.INCORRECT().copy()
+                                    .append(Text.translatable(CommandInit.GAMEMODE_USAGE)
+                                            .setStyle(Style.EMPTY.withColor(0xAAAAAA).withBold(false)))
+                    );
+                    return 0;
+                })
+                .then(CommandManager.argument("mode", StringArgumentType.word())
+                        .suggests(GameModeCommand::suggestModes)
+                        .executes(ctx -> changeGameMode(ctx, null))
+                        .then(CommandManager.argument("player", StringArgumentType.word())
+                                .suggests(GameModeCommand::suggestPlayer)
+                                .executes(ctx -> changeGameMode(ctx, StringArgumentType.getString(ctx, "player"))))
+                )
+                .build();
+    }
+
+    private static CompletableFuture<Suggestions> suggestModes(CommandContext<ServerCommandSource> context, SuggestionsBuilder builder) {
+        String[] primary = {"survival", "creative", "adventure", "spectator"};
+        String[] aliases = {"s", "c", "a", "sp", "0", "1", "2", "3"};
+        String remaining = builder.getRemainingLowerCase();
+
+        if (remaining.isEmpty()) {
+            for (String m : primary) builder.suggest(m);
+        } else {
+            for (String m : primary) if (m.startsWith(remaining)) builder.suggest(m);
+            for (String a : aliases) if (a.startsWith(remaining)) builder.suggest(a);
+        }
+        return builder.buildFuture();
+    }
+
+    private static CompletableFuture<Suggestions> suggestPlayer(CommandContext<ServerCommandSource> context, SuggestionsBuilder builder) {
+        for (ServerPlayerEntity player : context.getSource().getServer().getPlayerManager().getPlayerList()) {
+            String name = player.getGameProfile().getName();
+            if (name.toLowerCase().startsWith(builder.getRemainingLowerCase())) {
+                builder.suggest(name);
+            }
+        }
+        return builder.buildFuture();
     }
 }
