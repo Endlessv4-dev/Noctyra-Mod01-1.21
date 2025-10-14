@@ -16,11 +16,24 @@ public class NoctyraModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(BlockInit.EXAMPLE_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(BlockInit.EXAMPLE_DEEPSLATE_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(BlockInit.EXAMPLE_NETHER_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(BlockInit.EXAMPLE_OVERWORLD_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(BlockInit.EXAMPLE_END_ORE);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ItemInit.EXAMPLE_ITEM, Models.GENERATED);
         itemModelGenerator.register(ItemInit.EXAMPLE_FOOD, Models.GENERATED);
+        itemModelGenerator.register(ItemInit.EXAMPLE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ItemInit.EXAMPLE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ItemInit.EXAMPLE_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ItemInit.EXAMPLE_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ItemInit.EXAMPLE_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ItemInit.EXAMPLE_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ItemInit.EXAMPLE_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ItemInit.EXAMPLE_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ItemInit.EXAMPLE_BOOTS, Models.GENERATED);
     }
 }

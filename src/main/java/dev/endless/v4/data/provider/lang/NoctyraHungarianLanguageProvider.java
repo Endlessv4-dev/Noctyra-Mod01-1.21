@@ -28,9 +28,22 @@ public class NoctyraHungarianLanguageProvider extends FabricLanguageProvider {
 
     @Override
     public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
-        translationBuilder.add(ItemInit.EXAMPLE_ITEM, "Példa Tárgy");
+        translationBuilder.add(ItemInit.EXAMPLE_ITEM, "Példatárgy");
         translationBuilder.add(ItemInit.EXAMPLE_FOOD, "Példa Étel");
-        translationBuilder.add(BlockInit.EXAMPLE_BLOCK, "Példa Blokk");
+        translationBuilder.add(BlockInit.EXAMPLE_BLOCK, "Példablokk");
         addText(translationBuilder, ItemGroupInit.EXAMPLE_TITLE, "Noctyra");
+        translationBuilder.add(BlockInit.EXAMPLE_DEEPSLATE_ORE, "Példaérc mélypalában");
+        translationBuilder.add(BlockInit.EXAMPLE_END_ORE, "Endpéldaérc");
+        translationBuilder.add(BlockInit.EXAMPLE_NETHER_ORE, "Netherpéldaérc");
+        translationBuilder.add(BlockInit.EXAMPLE_OVERWORLD_ORE, "Példaérc");
+        translationBuilder.add(ItemInit.EXAMPLE_SWORD, "Példakard");
+        translationBuilder.add(ItemInit.EXAMPLE_PICKAXE, "Példacsákány");
+        translationBuilder.add(ItemInit.EXAMPLE_AXE, "Példafejsze");
+        translationBuilder.add(ItemInit.EXAMPLE_SHOVEL, "Példaásó");
+        translationBuilder.add(ItemInit.EXAMPLE_HOE, "Példakapa");
+        translationBuilder.add(ItemInit.EXAMPLE_HELMET, "Példasisak");
+        translationBuilder.add(ItemInit.EXAMPLE_CHESTPLATE, "Példamellvért");
+        translationBuilder.add(ItemInit.EXAMPLE_LEGGINGS, "Példa lábszárvédő");
+        translationBuilder.add(ItemInit.EXAMPLE_BOOTS, "Példabakancs");
     }
 }

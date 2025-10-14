@@ -1,6 +1,19 @@
 {
-  "block.noctyra.example_block": "Példa Blokk",
+  "block.noctyra.example_block": "Példablokk",
+  "block.noctyra.example_deepslate_ore": "Példaérc mélypalában",
+  "block.noctyra.example_end_ore": "Endpéldaérc",
+  "block.noctyra.example_nether_ore": "Netherpéldaérc",
+  "block.noctyra.example_overworld_ore": "Példaérc",
+  "item.noctyra.example_axe": "Példafejsze",
+  "item.noctyra.example_boots": "Példabakancs",
+  "item.noctyra.example_chestplate": "Példamellvért",
   "item.noctyra.example_food": "Példa Étel",
-  "item.noctyra.example_item": "Példa Tárgy",
+  "item.noctyra.example_helmet": "Példasisak",
+  "item.noctyra.example_hoe": "Példakapa",
+  "item.noctyra.example_item": "Példatárgy",
+  "item.noctyra.example_leggings": "Példa lábszárvédő",
+  "item.noctyra.example_pickaxe": "Példacsákány",
+  "item.noctyra.example_shovel": "Példaásó",
+  "item.noctyra.example_sword": "Példakard",
   "itemGroup.noctyra.example_group": "Noctyra"
 }

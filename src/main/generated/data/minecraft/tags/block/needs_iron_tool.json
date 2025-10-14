@@ -1,5 +1,9 @@
 {
   "values": [
-    "noctyra:example_block"
+    "noctyra:example_block",
+    "noctyra:example_deepslate_ore",
+    "noctyra:example_end_ore",
+    "noctyra:example_nether_ore",
+    "noctyra:example_overworld_ore"
   ]
 }

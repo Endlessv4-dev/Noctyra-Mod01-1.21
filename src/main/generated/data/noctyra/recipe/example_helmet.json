@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "noctyra:example_item"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "E E"
+  ],
+  "result": {
+    "count": 1,
+    "id": "noctyra:example_helmet"
+  }
+}

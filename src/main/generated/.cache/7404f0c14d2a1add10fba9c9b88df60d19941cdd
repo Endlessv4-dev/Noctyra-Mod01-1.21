@@ -1,2 +1,6 @@
-// 1.21	2025-10-13T21:07:07.7963263	Noctyra/Block Loot Tables
+// 1.21	2025-10-14T15:59:50.4357907	Noctyra/Block Loot Tables
+0114289ffc8c4ca05b2a408dec668ea02da80887 data\noctyra\loot_table\blocks\example_deepslate_ore.json
 22e03900a1434411b4248caba86c1301ac32b94b data\noctyra\loot_table\blocks\example_block.json
+d7cb1a56d810ed21c13d4a3d2d38293821fe68f3 data\noctyra\loot_table\blocks\example_end_ore.json
+8b4b1bf186f050e01dede3c0ea8314eaa3011d75 data\noctyra\loot_table\blocks\example_overworld_ore.json
+e7cc857c85c46c0e457cd2e10b766b41b1bfaed1 data\noctyra\loot_table\blocks\example_nether_ore.json

@@ -1,12 +1,15 @@
 package dev.endless.v4;
 
-import dev.endless.v4.data.provider.NoctyraBlockLootTableProvider;
-import dev.endless.v4.data.provider.NoctyraBlockTagProvider;
+import dev.endless.v4.data.generator.NoctyraWorldGenerator;
+import dev.endless.v4.data.provider.*;
 import dev.endless.v4.data.provider.lang.NoctyraEnglishLanguageProvider;
 import dev.endless.v4.data.provider.lang.NoctyraHungarianLanguageProvider;
-import dev.endless.v4.data.provider.NoctyraModelProvider;
+import dev.endless.v4.init.worldgen.ConfiguredFeatureInit;
+import dev.endless.v4.init.worldgen.PlacedFeatureInit;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.minecraft.registry.RegistryBuilder;
+import net.minecraft.registry.RegistryKeys;
 
 public class NoctyraDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -17,5 +20,14 @@ public class NoctyraDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(NoctyraHungarianLanguageProvider::new);
 		pack.addProvider(NoctyraBlockLootTableProvider::new);
 		pack.addProvider(NoctyraBlockTagProvider::new);
+		pack.addProvider(NoctyraItemTagProvider::new);
+		pack.addProvider(NoctyraWorldGenerator::new);
+		pack.addProvider(NoctyraRecipeProvider::new);
+	}
+
+	@Override
+	public void buildRegistry(RegistryBuilder registryBuilder) {
+		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ConfiguredFeatureInit::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, PlacedFeatureInit::bootstrap);
 	}
 }

@@ -32,5 +32,18 @@ public class NoctyraEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ItemInit.EXAMPLE_FOOD, "Example Food");
         translationBuilder.add(BlockInit.EXAMPLE_BLOCK, "Example Block");
         addText(translationBuilder, ItemGroupInit.EXAMPLE_TITLE, "Noctyra");
+        translationBuilder.add(BlockInit.EXAMPLE_DEEPSLATE_ORE, "Deepslate Example Ore");
+        translationBuilder.add(BlockInit.EXAMPLE_END_ORE, "End Example Ore");
+        translationBuilder.add(BlockInit.EXAMPLE_NETHER_ORE, "Nether Example Ore");
+        translationBuilder.add(BlockInit.EXAMPLE_OVERWORLD_ORE, "Example Ore");
+        translationBuilder.add(ItemInit.EXAMPLE_SWORD, "Example Sword");
+        translationBuilder.add(ItemInit.EXAMPLE_PICKAXE, "Example Pickaxe");
+        translationBuilder.add(ItemInit.EXAMPLE_AXE, "Example Axe");
+        translationBuilder.add(ItemInit.EXAMPLE_SHOVEL, "Example Shovel");
+        translationBuilder.add(ItemInit.EXAMPLE_HOE, "Example Hoe");
+        translationBuilder.add(ItemInit.EXAMPLE_HELMET, "Example Helmet");
+        translationBuilder.add(ItemInit.EXAMPLE_CHESTPLATE, "Example Chestplate");
+        translationBuilder.add(ItemInit.EXAMPLE_LEGGINGS, "Example Leggings");
+        translationBuilder.add(ItemInit.EXAMPLE_BOOTS, "Example Boots");
     }
 }

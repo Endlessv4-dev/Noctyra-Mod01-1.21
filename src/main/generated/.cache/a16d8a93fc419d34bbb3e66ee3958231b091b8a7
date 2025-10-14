@@ -1,4 +1,5 @@
-// 1.21	2025-10-13T21:07:07.7963263	Noctyra/Tags for minecraft:block
+// 1.21	2025-10-14T15:59:50.4367924	Noctyra/Tags for minecraft:block
 1f3afa8c734e0b18d0511db422915a2092179300 data\noctyra\tags\block\example.json
-ab0c15d77ea46905a25c10094075c2e6bbff7876 data\minecraft\tags\block\needs_iron_tool.json
-ab0c15d77ea46905a25c10094075c2e6bbff7876 data\minecraft\tags\block\mineable\pickaxe.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\noctyra\tags\block\incorrect_for_example_tool.json
+966bd592a2290a3faa639f8be5273ca8882787c1 data\minecraft\tags\block\needs_iron_tool.json
+966bd592a2290a3faa639f8be5273ca8882787c1 data\minecraft\tags\block\mineable\pickaxe.json
