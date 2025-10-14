@@ -2,6 +2,7 @@ package dev.endless.v4.data.provider.lang;
 
 import dev.endless.v4.Noctyra;
 import dev.endless.v4.init.BlockInit;
+import dev.endless.v4.init.CommandInit;
 import dev.endless.v4.init.ItemGroupInit;
 import dev.endless.v4.init.ItemInit;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -45,5 +46,15 @@ public class NoctyraHungarianLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ItemInit.EXAMPLE_CHESTPLATE, "Példamellvért");
         translationBuilder.add(ItemInit.EXAMPLE_LEGGINGS, "Példa lábszárvédő");
         translationBuilder.add(ItemInit.EXAMPLE_BOOTS, "Példabakancs");
+
+        translationBuilder.add(CommandInit.CODE_INCORRECT, "HELYTELEN | ");
+        translationBuilder.add(CommandInit.PLAYER_NOT_FOUND, "Játékos nem található.");
+        translationBuilder.add(CommandInit.GAMEMODE_USAGE, "Használat: /gamemode <mód> [játékos]");
+        translationBuilder.add(CommandInit.MODE_CREATIVE, "KREATÍV");
+        translationBuilder.add(CommandInit.MODE_SURVIVAL, "TÚLÉLŐ");
+        translationBuilder.add(CommandInit.MODE_ADVENTURE, "KALAND");
+        translationBuilder.add(CommandInit.MODE_SPECTATOR, "SZEMLÉLŐ");
+        translationBuilder.add(CommandInit.GAMEMODE_SELF, "A játékmódod megváltozott a következőre: %s.");
+        translationBuilder.add(CommandInit.GAMEMODE_OTHER, "Megváltoztattad %1$s játékmódját a következőre: %2$s.");
     }
 }

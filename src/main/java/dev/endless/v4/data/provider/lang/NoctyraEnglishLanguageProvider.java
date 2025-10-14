@@ -2,6 +2,7 @@ package dev.endless.v4.data.provider.lang;
 
 import dev.endless.v4.Noctyra;
 import dev.endless.v4.init.BlockInit;
+import dev.endless.v4.init.CommandInit;
 import dev.endless.v4.init.ItemGroupInit;
 import dev.endless.v4.init.ItemInit;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -45,5 +46,15 @@ public class NoctyraEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ItemInit.EXAMPLE_CHESTPLATE, "Example Chestplate");
         translationBuilder.add(ItemInit.EXAMPLE_LEGGINGS, "Example Leggings");
         translationBuilder.add(ItemInit.EXAMPLE_BOOTS, "Example Boots");
+
+        translationBuilder.add(CommandInit.CODE_INCORRECT, "INCORRECT | ");
+        translationBuilder.add(CommandInit.PLAYER_NOT_FOUND, "Player not found.");
+        translationBuilder.add(CommandInit.GAMEMODE_USAGE, "Usage: /gamemode <mode> [player]");
+        translationBuilder.add(CommandInit.MODE_CREATIVE, "CREATIVE");
+        translationBuilder.add(CommandInit.MODE_SURVIVAL, "SURVIVAL");
+        translationBuilder.add(CommandInit.MODE_ADVENTURE, "ADVENTURE");
+        translationBuilder.add(CommandInit.MODE_SPECTATOR, "SPECTATOR");
+        translationBuilder.add(CommandInit.GAMEMODE_SELF, "Your gamemode has been changed to %s.");
+        translationBuilder.add(CommandInit.GAMEMODE_OTHER, "Changed the gamemode for %1$s to %2$s.");
     }
 }

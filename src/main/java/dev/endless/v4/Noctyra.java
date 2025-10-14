@@ -1,9 +1,7 @@
 package dev.endless.v4;
 
-import dev.endless.v4.init.ArmorMaterialInit;
-import dev.endless.v4.init.BlockInit;
-import dev.endless.v4.init.ItemGroupInit;
-import dev.endless.v4.init.ItemInit;
+import dev.endless.v4.command.gamemode.GameModeCommand;
+import dev.endless.v4.init.*;
 import dev.endless.v4.init.worldgen.BiomeModifiactionInit;
 import net.fabricmc.api.ModInitializer;
 
@@ -23,6 +21,8 @@ public class Noctyra implements ModInitializer {
 		LOGGER.info("Loading...");
 		registerInit();
 		registerIntoVanillaInventory();
+
+		registerCommands();
 	}
 
 	public static Identifier id(String path) {
@@ -35,6 +35,11 @@ public class Noctyra implements ModInitializer {
 		ItemGroupInit.load();
 		BiomeModifiactionInit.load();
 		ArmorMaterialInit.load();
+		CommandInit.load();
+	}
+
+	private static void registerCommands() {
+		GameModeCommand.register();
 	}
 
 	private static void registerIntoVanillaInventory() {
