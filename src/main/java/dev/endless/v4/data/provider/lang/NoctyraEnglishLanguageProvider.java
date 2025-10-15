@@ -49,6 +49,7 @@ public class NoctyraEnglishLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add(CommandInit.CODE_INCORRECT, "INCORRECT | ");
         translationBuilder.add(CommandInit.PLAYER_NOT_FOUND, "Player not found.");
+
         translationBuilder.add(CommandInit.GAMEMODE_USAGE, "Usage: /gamemode <mode> [player]");
         translationBuilder.add(CommandInit.MODE_CREATIVE, "CREATIVE");
         translationBuilder.add(CommandInit.MODE_SURVIVAL, "SURVIVAL");
@@ -56,5 +57,14 @@ public class NoctyraEnglishLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(CommandInit.MODE_SPECTATOR, "SPECTATOR");
         translationBuilder.add(CommandInit.GAMEMODE_SELF, "Your gamemode has been changed to %s.");
         translationBuilder.add(CommandInit.GAMEMODE_OTHER, "Changed the gamemode for %1$s to %2$s.");
+
+        //translationBuilder.add(CommandInit.TELEPORT_SELF, "You have teleported to spawn.");
+        //translationBuilder.add(CommandInit.TELEPORT_OTHERS, "You have teleported %s to spawn.");
+        translationBuilder.add(CommandInit.TELEPORTED, "You have been teleported to spawn.");
+        translationBuilder.add(CommandInit.TELEPORT_CANCELLED, "You moved, teleport cancelled.");
+        translationBuilder.add(CommandInit.TELEPORTING_TIMED, "Teleporting in %s...");
+        //translationBuilder.add(CommandInit.TELEPORT_SUCCESSFUL, "Teleported to spawn.");
+        translationBuilder.add(CommandInit.SETSPAWN, "You have set the spawn at your current location.");
+        translationBuilder.add(CommandInit.SPAWN_NOT_SET_YET, "The spawn hasn't been set yet.");
     }
 }

@@ -1,6 +1,9 @@
 package dev.endless.v4;
 
 import dev.endless.v4.command.gamemode.GameModeCommand;
+import dev.endless.v4.command.spawn.SetSpawnCommand;
+import dev.endless.v4.command.spawn.SpawnCommand;
+import dev.endless.v4.command.util.NoctyraTickSchedulerUtil;
 import dev.endless.v4.init.*;
 import dev.endless.v4.init.worldgen.BiomeModifiactionInit;
 import net.fabricmc.api.ModInitializer;
@@ -19,9 +22,9 @@ public class Noctyra implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Loading...");
+		NoctyraTickSchedulerUtil.init();
 		registerInit();
 		registerIntoVanillaInventory();
-
 		registerCommands();
 	}
 
@@ -40,6 +43,8 @@ public class Noctyra implements ModInitializer {
 
 	private static void registerCommands() {
 		GameModeCommand.register();
+		SpawnCommand.register();
+		SetSpawnCommand.register();
 	}
 
 	private static void registerIntoVanillaInventory() {

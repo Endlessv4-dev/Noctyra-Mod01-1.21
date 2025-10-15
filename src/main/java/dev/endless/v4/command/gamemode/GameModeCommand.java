@@ -9,6 +9,7 @@ import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import com.mojang.brigadier.tree.CommandNode;
 import com.mojang.brigadier.tree.LiteralCommandNode;
 import dev.endless.v4.Noctyra;
+import dev.endless.v4.command.util.NoctyraSuggestionsUtil;
 import dev.endless.v4.command.util.NoctyraTextUtil;
 import dev.endless.v4.init.CommandInit;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
@@ -31,7 +32,7 @@ public class GameModeCommand {
         CommandRegistrationCallback.EVENT.register((disptacher, registryAccess, environment) -> {
             if (environment.dedicated || environment.integrated) {
                 registerCommand(disptacher);
-                Noctyra.LOGGER.info("Registering Gamemode Command for noctyra");
+                Noctyra.LOGGER.info("Registering Gamemode Command for Noctyra");
             }
         });
     }
@@ -120,36 +121,12 @@ public class GameModeCommand {
                     return 0;
                 })
                 .then(CommandManager.argument("mode", StringArgumentType.word())
-                        .suggests(GameModeCommand::suggestModes)
+                        .suggests(NoctyraSuggestionsUtil::suggestModes)
                         .executes(ctx -> changeGameMode(ctx, null))
                         .then(CommandManager.argument("player", StringArgumentType.word())
-                                .suggests(GameModeCommand::suggestPlayer)
+                                .suggests(NoctyraSuggestionsUtil::suggestPlayer)
                                 .executes(ctx -> changeGameMode(ctx, StringArgumentType.getString(ctx, "player"))))
                 )
                 .build();
-    }
-
-    private static CompletableFuture<Suggestions> suggestModes(CommandContext<ServerCommandSource> context, SuggestionsBuilder builder) {
-        String[] primary = {"survival", "creative", "adventure", "spectator"};
-        String[] aliases = {"s", "c", "a", "sp", "0", "1", "2", "3"};
-        String remaining = builder.getRemainingLowerCase();
-
-        if (remaining.isEmpty()) {
-            for (String m : primary) builder.suggest(m);
-        } else {
-            for (String m : primary) if (m.startsWith(remaining)) builder.suggest(m);
-            for (String a : aliases) if (a.startsWith(remaining)) builder.suggest(a);
-        }
-        return builder.buildFuture();
-    }
-
-    private static CompletableFuture<Suggestions> suggestPlayer(CommandContext<ServerCommandSource> context, SuggestionsBuilder builder) {
-        for (ServerPlayerEntity player : context.getSource().getServer().getPlayerManager().getPlayerList()) {
-            String name = player.getGameProfile().getName();
-            if (name.toLowerCase().startsWith(builder.getRemainingLowerCase())) {
-                builder.suggest(name);
-            }
-        }
-        return builder.buildFuture();
     }
 }

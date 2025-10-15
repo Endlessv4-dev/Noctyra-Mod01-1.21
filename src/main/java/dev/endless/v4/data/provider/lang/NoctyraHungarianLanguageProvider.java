@@ -49,6 +49,7 @@ public class NoctyraHungarianLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add(CommandInit.CODE_INCORRECT, "HELYTELEN | ");
         translationBuilder.add(CommandInit.PLAYER_NOT_FOUND, "Játékos nem található.");
+
         translationBuilder.add(CommandInit.GAMEMODE_USAGE, "Használat: /gamemode <mód> [játékos]");
         translationBuilder.add(CommandInit.MODE_CREATIVE, "KREATÍV");
         translationBuilder.add(CommandInit.MODE_SURVIVAL, "TÚLÉLŐ");
@@ -56,5 +57,14 @@ public class NoctyraHungarianLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(CommandInit.MODE_SPECTATOR, "SZEMLÉLŐ");
         translationBuilder.add(CommandInit.GAMEMODE_SELF, "A játékmódod megváltozott a következőre: %s.");
         translationBuilder.add(CommandInit.GAMEMODE_OTHER, "Megváltoztattad %1$s játékmódját a következőre: %2$s.");
+
+        //translationBuilder.add(CommandInit.TELEPORT_SELF, "Teleportálva a spawnra.");
+        //translationBuilder.add(CommandInit.TELEPORT_OTHERS, "Teleportáltad %s játékost a spawnra.");
+        translationBuilder.add(CommandInit.TELEPORTED, "El lettél teleportálva a spawnra.");
+        translationBuilder.add(CommandInit.TELEPORT_CANCELLED, "Megmozdultál, a teleportálás megszakítva.");
+        translationBuilder.add(CommandInit.TELEPORTING_TIMED, "Teleportálás %s...");
+        //translationBuilder.add(CommandInit.TELEPORT_SUCCESSFUL, "Teleported to spawn.");
+        translationBuilder.add(CommandInit.SETSPAWN, "Spawn beállítva a jelenlegi pozíciódra.");
+        translationBuilder.add(CommandInit.SPAWN_NOT_SET_YET, "A spawn még nincs beállítva.");
     }
 }
