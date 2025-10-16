@@ -32,7 +32,7 @@ public class GameModeCommand {
         CommandRegistrationCallback.EVENT.register((disptacher, registryAccess, environment) -> {
             if (environment.dedicated || environment.integrated) {
                 registerCommand(disptacher);
-                Noctyra.LOGGER.info("Registering Gamemode Command for Noctyra");
+                Noctyra.LOGGER.info("Registering Gamemode command for Noctyra");
             }
         });
     }

@@ -35,7 +35,7 @@ public class SpawnCommand {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             if (environment.dedicated || environment.integrated) {
                 registerCommand(dispatcher);
-                Noctyra.LOGGER.info("Registering Spawn Command for Noctyra");
+                Noctyra.LOGGER.info("Registering Spawn command for Noctyra");
             }
         });
         spawnData = SpawnStorage.load();

@@ -18,7 +18,7 @@ public class SetSpawnCommand {
         CommandRegistrationCallback.EVENT.register((disptacher, registryAccess, environment) -> {
             if (environment.dedicated || environment.integrated) {
                 registerCommand(disptacher);
-                Noctyra.LOGGER.info("Registering SetSpawn Command for Noctyra");
+                Noctyra.LOGGER.info("Registering SetSpawn command for Noctyra");
             }
         });
         // Load saved spawn on startup
