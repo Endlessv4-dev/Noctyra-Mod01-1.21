@@ -56,4 +56,18 @@ public class NoctyraTextUtil {
 
         return plr_not_fnd;
     }
+
+    public static Text NOT_IN_TEAM() {
+        MutableText notInTeam = Text.translatable(CommandInit.NOT_IN_TEAM)
+                .setStyle(Style.EMPTY.withColor(0xAAAAAA).withBold(false));
+
+        return notInTeam;
+    }
+
+    public static Text TEAM_DOESNT_EXIST() {
+        MutableText teamDsntExist = Text.translatable(CommandInit.TEAM_DOESNT_EXIST)
+                .setStyle(Style.EMPTY.withColor(0xAAAAAA).withBold(false));
+
+        return teamDsntExist;
+    }
 }

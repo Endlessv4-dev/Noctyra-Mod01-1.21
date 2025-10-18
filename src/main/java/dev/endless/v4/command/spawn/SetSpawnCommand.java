@@ -35,7 +35,7 @@ public class SetSpawnCommand {
         ServerPlayerEntity player = context.getSource().getPlayer();
         spawnData = SpawnStorage.fromPlayer(player);
         spawnData.save();
-        player.sendMessage(Text.literal("§aSpawn set at your current location."));
+        //player.sendMessage(Text.literal("§aSpawn set at your current location."));
         player.sendMessage(Text.translatable(CommandInit.SETSPAWN).setStyle(Style.EMPTY.withColor(0xAAAAAA).withBold(false)));
         return 1;
     }

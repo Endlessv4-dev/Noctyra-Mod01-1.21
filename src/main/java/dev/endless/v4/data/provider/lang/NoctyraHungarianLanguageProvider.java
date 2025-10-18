@@ -66,5 +66,44 @@ public class NoctyraHungarianLanguageProvider extends FabricLanguageProvider {
         //translationBuilder.add(CommandInit.TELEPORT_SUCCESSFUL, "Teleported to spawn.");
         translationBuilder.add(CommandInit.SETSPAWN, "Spawn beállítva a jelenlegi pozíciódra.");
         translationBuilder.add(CommandInit.SPAWN_NOT_SET_YET, "A spawn még nincs beállítva.");
+
+        translationBuilder.add(CommandInit.NOT_IN_TEAM, "Nem vagy benne egy csapatban.");
+        translationBuilder.add(CommandInit.OTHER_NOT_IN_TEAM, "Ez a játékos nincs csapatban.");
+        translationBuilder.add(CommandInit.NO_ALLIANCES, "Nincsenek szövetségesek.");
+        translationBuilder.add(CommandInit.ALLY_CHAT, "[SZÖVETSÉGES]");
+        translationBuilder.add(CommandInit.TEAM_CHAT, "[CSAPAT]");
+        translationBuilder.add(CommandInit.ALLIANCE_REQUEST_PREFIX, "[SZÖVETSÉGI KÉRELEM]");
+        translationBuilder.add(CommandInit.TEAM_DOESNT_EXIST, "Ez a csapat nem létezik.");
+        translationBuilder.add(CommandInit.TEAM_NOT_ALLY, "Ez a csapat nem a szövetségesed.");
+        translationBuilder.add(CommandInit.TEAM_NOW_NEUTRAL, "A csapatod már nem szövetséges %s csapattal.");
+        translationBuilder.add(CommandInit.NO_PERMISSION_TO_DENY_ALLIANCE, "Nincs jogosultságod szövetségek elutasításához.");
+        translationBuilder.add(CommandInit.NO_PERMISSION_TO_ACCEPT_ALLIANCE, "Nincs jogosultságod szövetségek elfogadásához.");
+        translationBuilder.add(CommandInit.NO_PERMISSION_TO_MAKE_ALLIANCE, "Nincs jogosultságod szövetségeket kötni..");
+        translationBuilder.add(CommandInit.NO_PERMISSION_TO_INVITE, "Nincs jogosultságod játékosok meghívásához.");
+        translationBuilder.add(CommandInit.NO_ALLIANCE_REQUEST_FOUND, "Nem találtam szövetség kérelmet tőle: %s.");
+        translationBuilder.add(CommandInit.ALLIANCE_DENIED, "A szövetségi kérelem el lett utasítva %s által.");
+        translationBuilder.add(CommandInit.ALLIANCE_ACCEPTED, "A csapatod mostantól szövetségben áll %s csapattal.");
+        translationBuilder.add(CommandInit.ALLIANCE_DENIED_SELF, "Elutasítottad a szövetségi kérelmet, amelyet %s küldött.");
+        translationBuilder.add(CommandInit.ALLIANCE, "SZÖVETSÉG");
+        translationBuilder.add(CommandInit.CANNOT_ALLY_OWN, "Nem szövetkezhetsz a saját csapatoddal.");
+        translationBuilder.add(CommandInit.NO_PLAYER_PERMISSION_ONLINE_ALLIANCE, "Nincs fent senki az említett csapatból, akinek van jogosultsága szövetséget kötni.");
+        translationBuilder.add(CommandInit.ALLIANCE_REQUEST_MESSAGE, "%s szövetséget akar kötni.");
+        translationBuilder.add(CommandInit.ALLIANCE_REQUEST_MESSAGE_ND, "Írd %1$s az elfogadáshoz, or %2$s az elutasításhoz.");
+        translationBuilder.add(CommandInit.RANK_SCOUT_DESC, "Jogosultság játékosok meghívására a csapathoz.");
+        translationBuilder.add(CommandInit.RANK_SCOUTMASTER_DESC, "Jogosultság a %s rang adáshoz és jogaihoz.");
+        translationBuilder.add(CommandInit.RANK_CONSUL_DESC, "Jogosultság szövetség kötésekhez.");
+        translationBuilder.add(CommandInit.RANK_DOESNT_EXIST, "Ez a rang nem létezik.");
+        translationBuilder.add(CommandInit.RANK_TITLE, "RANGOK:");
+        translationBuilder.add(CommandInit.RANK_TOPLIST_INVALID_PAGE, "Helytelen oldalszám.");
+        translationBuilder.add(CommandInit.PAGE_DOESNT_EXIST, "Az oldal %1$s nem létezik! Max oldal: %2$s");
+        translationBuilder.add(CommandInit.TEAM_TOPLIST_TITLE, "CSAPAT TOPLISTA");
+        translationBuilder.add(CommandInit.TEAM_TOPLIST_PAGE, "Oldal");
+        translationBuilder.add(CommandInit.TEAM_TOPLIST_NEXT_PAGE, "Írd %1$s %2$s hogy lásd a kövezkető oldalt.");
+        translationBuilder.add(CommandInit.CANT_INVITE_SELF, "Nem hívhatod meg magad.");
+        translationBuilder.add(CommandInit.PLAYER_ALREADY_IN_TEAM, "Ez a játékos már csapatban van.");
+        translationBuilder.add(CommandInit.INVITE_PLAYER_SUCCESS, "Meghívtad %s játékost a csapatba.");
+        translationBuilder.add(CommandInit.INVITE_MESSAGE, "Meglettél hívva a %s csapatba.");
+        translationBuilder.add(CommandInit.INVITE_MESSAGE_ND, "Írd %1$s hogy elfogadd vagy %2$s hogy elutasítsd a meghívást.");
+        translationBuilder.add(CommandInit.PLAYER_NOT_IN_YOUR_TEAM, "Ez a játékos nem a te csapatodban van.");
     }
 }

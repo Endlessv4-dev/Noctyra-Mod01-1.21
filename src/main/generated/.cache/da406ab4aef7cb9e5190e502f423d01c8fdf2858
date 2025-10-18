@@ -1,10 +1,10 @@
-// 1.21	2025-10-16T22:45:18.7215275	Noctyra/Tags for minecraft:item
+// 1.21	2025-10-18T17:32:39.0048415	Noctyra/Tags for minecraft:item
 777dd782ee61435c5bc60a7da735172ad574b3f1 data\minecraft\tags\item\axes.json
 798d6b57e8f1c2a11c39bdcaf790f797dac0c3e8 data\minecraft\tags\item\chest_armor.json
 c5460800d5a524b0e5ffcdcd0a14b18068bb7a3a data\minecraft\tags\item\foot_armor.json
 bd03fe20724fc756884f83a027a8908c2b15051a data\minecraft\tags\item\pickaxes.json
 be11cfad07e6e5e4f42bea5a9f78baee124d4c15 data\minecraft\tags\item\leg_armor.json
-225ddd475f1214c35814a2a1b98644eda4d809ff data\minecraft\tags\item\hoes.json
 da2563798f83f228a1b24606a94e53664577c701 data\minecraft\tags\item\shovels.json
+225ddd475f1214c35814a2a1b98644eda4d809ff data\minecraft\tags\item\hoes.json
 d941046c6206bb209b1eab578f6c5da674c023ac data\minecraft\tags\item\swords.json
 dbc4bddecc527a44599f9a470383f0cf6c76d68c data\minecraft\tags\item\head_armor.json

@@ -28,6 +28,10 @@ public class TeamManager {
         return Noctyra.playerInTeam.get(player.getUuid());
     }
 
+    public boolean isOwner(ServerPlayerEntity player) {
+        return Noctyra.teamOwner.containsKey(player.getUuid());
+    }
+
     public void updateDisplayName(ServerPlayerEntity player) {
         String team = getTeam(player);
         if (team == null) {
@@ -83,6 +87,9 @@ public class TeamManager {
 
         String teamName = getTeam(player);
         Noctyra.playerInTeam.remove(player.getUuid());
+        Noctyra.TEAM_RANK_CONSUL.computeIfPresent(player.getUuid(), (uuid, value) -> null);
+        Noctyra.TEAM_RANK_SCOUT.computeIfPresent(player.getUuid(), (uuid, value) -> null);
+        Noctyra.TEAM_PROMOTER_SCOUT.computeIfPresent(player.getUuid(), (uuid, value) -> null);
         Noctyra.teamDataManager.saveTeams();
 
         player.sendMessage(Text.literal("§7You have left the §e" + teamName + " §7team."));
@@ -109,6 +116,57 @@ public class TeamManager {
         Noctyra.teamDataManager.saveTeams();
 
         player.sendMessage(Text.literal("§7You have joined the §e" + existing.get() + " §7team."));
+    }
+
+    public void addKill(ServerPlayerEntity killer, ServerPlayerEntity victim) {
+        String killerTeam = Noctyra.playerInTeam.get(killer.getUuid());
+        String victimTeam = Noctyra.playerInTeam.get(victim.getUuid());
+
+        // Skip if killer not in a team
+        if (killerTeam == null) return;
+
+        // Skip if victim is on the same team
+        if (killerTeam.equals(victimTeam)) return;
+
+        // Add +1 kill
+        int kills = Noctyra.teamKills.getOrDefault(killerTeam, 0) + 1;
+        Noctyra.teamKills.put(killerTeam, kills);
+
+        // Save immediately
+        Noctyra.teamDataManager.saveTeams();
+
+        // Optional feedback to killer
+        killer.sendMessage(Text.literal("§7Your team now has §e" + kills + " §7kills."));
+    }
+
+    public int getKills(String team) {
+        if (team == null || team.isEmpty()) return 0;
+        return Noctyra.teamKills.getOrDefault(team, 0);
+    }
+
+    public void addAlly(String team, String ally) {
+        Noctyra.teamAllies.computeIfAbsent(team, k -> new ArrayList<>()).add(ally);
+    }
+
+    public void removeAlly(String team, String ally) {
+        List<String> allies = Noctyra.teamAllies.get(team);
+        if (allies != null) {
+            allies.remove(ally);
+        }
+    }
+
+    public List<String> getAllies(String team) {
+        return Noctyra.teamAllies.get(team);
+    }
+
+    public ServerPlayerEntity getOwner(String team, MinecraftServer server) {
+        for (Map.Entry<UUID, String> entry : Noctyra.teamOwner.entrySet()) {
+            if (entry.getValue().equalsIgnoreCase(team)) {
+                UUID ownerUUID = entry.getKey();
+                return server.getPlayerManager().getPlayer(ownerUUID); // returns null if offline
+            }
+        }
+        return null; // no team or no owner found
     }
 
     public Formatting getTeamColor(String teamName) {

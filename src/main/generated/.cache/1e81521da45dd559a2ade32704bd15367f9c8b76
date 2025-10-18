@@ -1,4 +1,4 @@
-// 1.21	2025-10-16T22:45:18.7225283	Noctyra/Model Definitions
+// 1.21	2025-10-18T17:32:39.0058425	Noctyra/Model Definitions
 da7652b9c2070799f5ba03d2789ff138cfae617b assets\noctyra\models\block\example_nether_ore.json
 9d3f560f205667c68b877ed90c2c8a765ed2f2ad assets\noctyra\models\item\example_deepslate_ore.json
 4b02c84aa02935eed352060ccb97b0b64068816f assets\noctyra\models\item\example_leggings.json
@@ -17,8 +17,8 @@ de2cdabd1c415ce7f5142a8becc263aeaa0d108a assets\noctyra\models\item\example_end_
 479c3e19e75e8ede48422840b4132ead99b7b0b3 assets\noctyra\blockstates\example_block.json
 6e8e121f8dbc331bdbc1e05257077584c3583c47 assets\noctyra\models\item\example_sword.json
 090a5b0dbffe6fa625c71122791995b35c85a022 assets\noctyra\models\item\example_item.json
-3c0abcc355a8ec68cfd153d3abf59cc808cd03b4 assets\noctyra\models\item\example_overworld_ore.json
 75b32926c956318cdeeff6ed820f537f74d707a5 assets\noctyra\blockstates\example_deepslate_ore.json
+3c0abcc355a8ec68cfd153d3abf59cc808cd03b4 assets\noctyra\models\item\example_overworld_ore.json
 63ce942b55b1d97dd2710d377978b563d56a0c98 assets\noctyra\models\item\example_chestplate.json
 0aaac004d6b89cfcfe3a8f627e1456d232085126 assets\noctyra\models\item\example_food.json
 c6f5a59060b3f5b522f5e031c15662f1137a304c assets\noctyra\models\item\example_shovel.json
